@@ -10,11 +10,18 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
-
 Route::get('/', function () {
-    return view('welcome');
+    return  view ('index');
 });
 
-Route::get('/index', function () {
-    return view('index');
+Route::get('/jenis sayur', function () {
+    $nama='';
+    return  view ('Sayuran', ['nama' => $nama]);
 });
+
+
+Route::get('/', 'TokohController@home'); 
+Route::get('/Sayuran', 'TokohController@Sayuran'); 
+
+
+Route::get('/harga', 'HargaController@index');
