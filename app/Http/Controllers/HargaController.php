@@ -82,3 +82,5 @@ class HargaController extends Controller
         //
     }
 }
+
+
