@@ -14,14 +14,15 @@ Route::get('/', function () {
     return  view ('index');
 });
 
-Route::get('/jenis sayur', function () {
+Route::get('/sayur', function () {
     $nama='';
-    return  view ('Sayuran', ['nama' => $nama]);
+    return  view ('sayur', ['nama' => $nama]);
 });
 
+Route::get('/sayur', 'SayurController');
 
-Route::get('/', 'TokohController@home'); 
-Route::get('/Sayuran', 'TokohController@Sayuran'); 
+Route::get('/sayur/data', 'SayurController@data');
 
+Route::get('/sayur/add', 'SayurController@add');
 
-Route::get('/harga', 'HargaController@index');
+Route::post('/sayur/addProcess', 'SayurController@addProcess');
